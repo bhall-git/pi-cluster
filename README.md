@@ -123,3 +123,10 @@ After resolving the DNS issue, Flux successfully synchronized the cluster with G
 - Implement Sealed Secrets
 - Add monitoring with Prometheus and Grafana
 - Configure automated image updates
+## Screenshot
+
+### FluxCD successfully synchronized with GitHub
+
+The screenshot below shows the Flux GitRepository and Kustomization resources in the **Ready** state, along with all Flux controllers running in the `flux-system` namespace.
+
+![FluxCD Bootstrap](docs/images/flux-bootstrap.png)

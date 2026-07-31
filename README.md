@@ -7,7 +7,16 @@ This repository contains the GitOps configuration for my Raspberry Pi Kubernetes
 The cluster is managed using **FluxCD**, which continuously synchronizes the Kubernetes cluster with this Git repository. Instead of manually deploying resources with `kubectl apply`, cluster configuration is stored in Git and automatically reconciled by Flux.
 
 ---
+## Project Status
 
+✅ FluxCD successfully bootstrapped
+
+✅ GitHub repository synchronized
+
+✅ GitOps reconciliation working
+
+🔄 Next: Deploy workloads using GitOps
+---
 ## Objectives
 
 - Learn GitOps principles

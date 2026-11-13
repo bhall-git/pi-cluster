@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: monitoring
+  namespace: monitoring
+spec:
+  suspend: true
+  interval: 30m
+  releaseName: monitoring
+  targetNamespace: monitoring
+  storageNamespace: monitoring
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      version: "85.1.3"
+      sourceRef:
+        kind: HelmRepository
+        name: kube-prometheus-stack
+        namespace: monitoring
+      interval: 12h
+  values:
+    prometheus:
+      prometheusSpec:
+        retention: 7d
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 10Gi
+              storageClassName: local-path
